@@ -5,16 +5,15 @@
     </head>
     <body>
         <script>
-        function computerPlay() {
-            let computerChoices = [
-                "Rock",
-                "Paper",
-                "Scissors"
-            ];
-            let computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            return computerSelection;
-        };
-        console.log(computerPlay());
+            function computerPlay() {
+                let computerChoices = ['Rock', 'Paper', 'Scissors'];
+                let computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+                return computerSelection;
+            }
+            function humanPlay() {
+                let humanChoice = prompt('Choose One: Rock, Paper, or Scissors!');
+                return humanChoice;
+            }
         </script>
     </body>
 </html>
