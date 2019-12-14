@@ -11,9 +11,18 @@
                 return computerSelection;
             }
             function humanPlay() {
-                let humanChoice = prompt('Choose One: Rock, Paper, or Scissors!');
-                return humanChoice;
+                let humanSelection = prompt('Choose One: Rock, Paper, or Scissors!');
+                return humanSelection;
             }
+            function playGame() {
+                if (computerPlay().toUpperCase() === humanPlay().toUpperCase()) {
+                    console.log('Tie game!');
+                }
+                else {
+                    console.log('Hmmm');
+                }
+            }
+            playGame();
         </script>
     </body>
 </html>
