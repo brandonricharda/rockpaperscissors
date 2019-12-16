@@ -5,24 +5,63 @@
     </head>
     <body>
         <script>
-            function computerPlay() {
-                let computerChoices = ['Rock', 'Paper', 'Scissors'];
-                let computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-                return computerSelection;
-            }
-            function humanPlay() {
-                let humanSelection = prompt('Choose One: Rock, Paper, or Scissors!');
-                return humanSelection;
-            }
+            let humanScore = 0;
+            let computerScore = 0;
             function playGame() {
-                if (computerPlay().toUpperCase() === humanPlay().toUpperCase()) {
-                    console.log('Tie game!');
+                let computerChoices = ['Rock', 'Paper', 'Scissors'];
+                let computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)].toUpperCase();
+                let humanSelection = prompt('Choose One: Rock, Paper, or Scissors!').toUpperCase();
+                if (computerSelection === humanSelection) {
+                    console.log('Tie!');
+                } else if (computerSelection === 'ROCK' && humanSelection === 'PAPER') {
+                    console.log('Human takes this round! Paper covers rock.');
+                    humanScore++;
+                } else if (computerSelection === 'PAPER' && humanSelection === 'ROCK') {
+                    console.log('Computer takes this round! Paper covers rock.');
+                    computerScore++;
+                } else if (computerSelection === 'ROCK' && humanSelection === 'SCISSORS') {
+                    console.log('Computer takes this round! Rock smashes scissors.');
+                    computerScore++;
+                } else if (computerSelection === 'SCISSORS' && humanSelection === 'ROCK') {
+                    console.log('Human takes this round! Rock smashes scissors.');
+                    humanScore++;
+                } else if (computerSelection === 'PAPER' && humanSelection === 'SCISSORS') {
+                    console.log('Human takes this round! Scissors cuts paper.');
+                    humanScore++;
+                } else if (computerSelection === 'SCISSORS' && humanSelection === 'PAPER') {
+                    console.log('Computer takes this round! Scissors cuts paper.');
+                    computerScore++;
+                } else {
+                    console.log('Hmmm...');
                 }
-                else {
-                    console.log('Hmmm');
+            }
+            function whoWon() {
+                if (humanScore === computerScore) {
+                    console.log('Time for a tiebreaker!');
+                    playGame();
+                } else if (humanScore > computerScore) {
+                    console.log('Human wins!');
+                } else {
+                    console.log('Computer wins!');
+                }
+            }
+            function justCheck() {
+                if (humanScore === computerScore) {
+                    console.log('Another tie-breaker!');
+                    playGame();
+                } else {
+                    //** Nothing Happens **//
                 }
             }
             playGame();
+            playGame();
+            playGame();
+            playGame();
+            playGame();
+            whoWon();
+            justCheck();
+            console.log('Player scored', humanScore);
+            console.log('Computer scored', computerScore);
         </script>
     </body>
 </html>
