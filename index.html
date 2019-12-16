@@ -11,8 +11,24 @@
                 let computerChoices = ['Rock', 'Paper', 'Scissors'];
                 let computerSelection = computerChoices[Math.floor(Math.random() * computerChoices.length)].toUpperCase();
                 let humanSelection = prompt('Choose One: Rock, Paper, or Scissors!').toUpperCase();
+                if (humanSelection.toUpperCase() == 'ROCK' || humanSelection.toUpperCase() === 'PAPER' || humanSelection.toUpperCase() === 'SCISSORS')  {
+                    // Proceed
+                } else {
+                    alert('Please Choose Rock, Paper or Scissors!');
+                    playGame();
+                }
+                if ((humanScore <= 3 || computerScore <= 3) && (humanScore + computerScore <= 4)) {
+                        // Proceed
+                } else {
+                    return;
+                }
                 if (computerSelection === humanSelection) {
                     console.log('Tie!');
+                    if ((humanScore <= 3 || computerScore <= 3) && (humanScore + computerScore <= 4)) {
+                        playGame();
+                } else {
+                    return;
+                }
                 } else if (computerSelection === 'ROCK' && humanSelection === 'PAPER') {
                     console.log('Human takes this round! Paper covers rock.');
                     humanScore++;
@@ -32,7 +48,7 @@
                     console.log('Computer takes this round! Scissors cuts paper.');
                     computerScore++;
                 } else {
-                    console.log('Hmmm...');
+                    //** Proceed **//
                 }
             }
             function whoWon() {
@@ -45,22 +61,12 @@
                     console.log('Computer wins!');
                 }
             }
-            function justCheck() {
-                if (humanScore === computerScore) {
-                    console.log('Another tie-breaker!');
-                    playGame();
-                } else {
-                    //** Nothing Happens **//
-                }
-            }
             playGame();
             playGame();
             playGame();
             playGame();
             playGame();
             whoWon();
-            justCheck();
-            justCheck();
             console.log('Player scored', humanScore);
             console.log('Computer scored', computerScore);
         </script>
