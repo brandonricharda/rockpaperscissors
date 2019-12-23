@@ -61,12 +61,11 @@
                     console.log('Computer wins!');
                 }
             }
-            playGame();
-            playGame();
-            playGame();
-            playGame();
-            playGame();
+            for (i = 0; i <= 5; i++) {
+                playGame();
+            };
             whoWon();
+
             console.log('Player scored', humanScore);
             console.log('Computer scored', computerScore);
         </script>
