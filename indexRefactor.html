@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <div id="controls">
+            <button id='rock'>Rock</button>
+            <button id='paper'>Paper</button>
+            <button id='scissors'>Scissors</button>
+        </div>
+        <script>
+            let humanScore = 0;
+            let computerScore = 0;
+            initiate();
+            function computer() {
+                let computerOptions = ['Rock', 'Paper', 'Scissors'];
+                let x = computerOptions[Math.floor(Math.random() * computerOptions.length)].toUpperCase();
+                return x;
+            }
+            function initiate() {
+                let rockButton = document.querySelector('#rock');
+                let paperButton = document.querySelector('#paper');
+                let scissorsButton = document.querySelector('#scissors');
+                rockButton.addEventListener('click', function() {
+                    playRound(computer(), 'ROCK');
+                });
+                paperButton.addEventListener('click', function() {
+                    playRound(computer(), 'PAPER');
+                });
+                scissorsButton.addEventListener('click', function() {
+                    playRound(computer(), 'SCISSORS');
+                });
+            }
+            function playRound(computerMove, humanMove) {
+                if (computerMove === humanMove) {
+                    console.log('Tie!');
+                } else if (computerMove === 'ROCK' && humanMove === 'PAPER') {
+                    console.log('Human takes this round! Paper covers rock.');
+                    humanScore++;
+                } else if (computerMove === 'PAPER' && humanMove === 'ROCK') {
+                    console.log('Computer takes this round! Paper covers rock.');
+                    computerScore++;
+                } else if (computerMove === 'ROCK' && humanMove === 'SCISSORS') {
+                    console.log('Computer takes this round! Rock smashes scissors.');
+                    computerScore++;
+                } else if (computerMove === 'SCISSORS' && humanMove === 'ROCK') {
+                    console.log('Human takes this round! Rock smashes scissors.');
+                    humanScore++;
+                } else if (computerMove === 'PAPER' && humanMove === 'SCISSORS') {
+                    console.log('Human takes this round! Scissors cuts paper.');
+                    humanScore++;
+                } else if (computerMove === 'SCISSORS' && humanMove === 'PAPER') {
+                    console.log('Computer takes this round! Scissors cuts paper.');
+                    computerScore++;
+                }
+                if (computerScore == 5 || humanScore == 5) {
+                    if (computerScore > humanScore) {
+                        console.log('Computer Wins!');
+                    } else if (humanScore > computerScore) {
+                        console.log('Human Wins!');
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
