@@ -18,12 +18,15 @@
             //sets initial score to zero
             let humanScore = 0;
             let computerScore = 0;
-            //sets scoreboard to zero on page load
+            //sets scoreboard on page load
             const scoreArea = document.querySelector('#scoreBoard');
             const scoreText = document.createElement('h1');
+            const roundResultText = document.createElement('h2');
             scoreBoard.classList.add('scoreText');
+            scoreBoard.classList.add('roundResultText');
             scoreText.textContent = "Player Score:" + " " + humanScore + " " + "Computer Score:" + " " + computerScore;
             scoreBoard.appendChild(scoreText);
+            scoreBoard.appendChild(roundResultText);
             //pdates the scoreboard each round
             function scoreboardSet() {
                 scoreText.textContent = "Player Score:" + " " + humanScore + " " + "Computer Score:" + " " + computerScore;
@@ -60,24 +63,24 @@
             }
             function playRound(computerMove, humanMove) {
                 if (computerMove === humanMove) {
-                    console.log('Tie!');
+                    roundResultText.textContent = 'Tie!';
                 } else if (computerMove === 'ROCK' && humanMove === 'PAPER') {
-                    console.log('Human takes this round! Paper covers rock.');
+                    roundResultText.textContent = 'Human takes this round! Paper covers rock.';
                     humanScore++;
                 } else if (computerMove === 'PAPER' && humanMove === 'ROCK') {
-                    console.log('Computer takes this round! Paper covers rock.');
+                    roundResultText.textContent = 'Computer takes this round! Paper covers rock.';
                     computerScore++;
                 } else if (computerMove === 'ROCK' && humanMove === 'SCISSORS') {
-                    console.log('Computer takes this round! Rock smashes scissors.');
+                    roundResultText.textContent = 'Computer takes this round! Rock smashes scissors.';
                     computerScore++;
                 } else if (computerMove === 'SCISSORS' && humanMove === 'ROCK') {
-                    console.log('Human takes this round! Rock smashes scissors.');
+                    roundResultText.textContent = 'Human takes this round! Rock smashes scissors.';
                     humanScore++;
                 } else if (computerMove === 'PAPER' && humanMove === 'SCISSORS') {
-                    console.log('Human takes this round! Scissors cuts paper.');
+                    roundResultText.textContent = 'Human takes this round! Scissors cuts paper.';
                     humanScore++;
                 } else if (computerMove === 'SCISSORS' && humanMove === 'PAPER') {
-                    console.log('Computer takes this round! Scissors cuts paper.');
+                    roundResultText.textContent = 'Computer takes this round! Scissors cuts paper.';
                     computerScore++;
                 }
                 //checks to see if a winner has been declared yet
