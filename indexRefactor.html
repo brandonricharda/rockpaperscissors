@@ -11,31 +11,35 @@
             <button id='reset'>Reset</button>
         </div>
         <div id='scoreBoard'>
-
         </div>
         <script>
             //activates function that ties the controls to the appropriate outcomes
             initiateButtons();
+            //sets initial score to zero
             let humanScore = 0;
             let computerScore = 0;
-            //operation that sets the scoreboard
+            //sets scoreboard to zero on page load
             const scoreArea = document.querySelector('#scoreBoard');
             const scoreText = document.createElement('h1');
             scoreBoard.classList.add('scoreText');
-            scoreText.textContent = "Just Testing";
+            scoreText.textContent = "Player Score:" + " " + humanScore + " " + "Computer Score:" + " " + computerScore;
             scoreBoard.appendChild(scoreText);
-            //function to select the computer's move
+            //pdates the scoreboard each round
+            function scoreboardSet() {
+                scoreText.textContent = "Player Score:" + " " + humanScore + " " + "Computer Score:" + " " + computerScore;
+            }
+            //selects the computer's move
             function computer() {
                 let computerOptions = ['Rock', 'Paper', 'Scissors'];
                 let x = computerOptions[Math.floor(Math.random() * computerOptions.length)].toUpperCase();
                 return x;
             }
-            //function to reset the score after a five-game match
+            //resets the score (incl. scoreboard) to zero
             function scoreZero() {
                 humanScore = 0;
                 computerScore = 0;
+                scoreText.textContent = "Player Score:" + " " + humanScore + " " + "Computer Score:" + " " + computerScore;
             }
-            //function that actually does the tying of the controls to the appropriate outcomes
             function initiateButtons() {
                 let rockButton = document.querySelector('#rock');
                 let paperButton = document.querySelector('#paper');
@@ -79,11 +83,13 @@
                 //checks to see if a winner has been declared yet
                 if (computerScore == 5 || humanScore == 5) {
                     if (computerScore > humanScore) {
-                        console.log('Computer Wins! Final Score Is ' + computerScore + ' to ' + humanScore);
+                        scoreText.textContent = 'Computer Wins! Final Score Is ' + computerScore + ' to ' + humanScore;
                     } else if (humanScore > computerScore) {
-                        console.log('Human Wins! Final Score Is ' + computerScore + ' to ' + humanScore);
+                        scoreText.textContent = 'Human Wins! Final Score Is ' + computerScore + ' to ' + humanScore;
+                    } 
+                } else {
+                        scoreboardSet();
                     }
-                }
             }
         </script>
     </body>
