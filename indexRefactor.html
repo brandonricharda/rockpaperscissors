@@ -10,23 +10,33 @@
             <button id='scissors'>Scissors</button>
             <button id='reset'>Reset</button>
         </div>
-        <div id='scoreboard'>
-            
+        <div id='scoreBoard'>
+
         </div>
         <script>
+            //activates function that ties the controls to the appropriate outcomes
+            initiateButtons();
             let humanScore = 0;
             let computerScore = 0;
-            initiate();
+            //operation that sets the scoreboard
+            const scoreArea = document.querySelector('#scoreBoard');
+            const scoreText = document.createElement('h1');
+            scoreBoard.classList.add('scoreText');
+            scoreText.textContent = "Just Testing";
+            scoreBoard.appendChild(scoreText);
+            //function to select the computer's move
             function computer() {
                 let computerOptions = ['Rock', 'Paper', 'Scissors'];
                 let x = computerOptions[Math.floor(Math.random() * computerOptions.length)].toUpperCase();
                 return x;
             }
+            //function to reset the score after a five-game match
             function scoreZero() {
                 humanScore = 0;
                 computerScore = 0;
             }
-            function initiate() {
+            //function that actually does the tying of the controls to the appropriate outcomes
+            function initiateButtons() {
                 let rockButton = document.querySelector('#rock');
                 let paperButton = document.querySelector('#paper');
                 let scissorsButton = document.querySelector('#scissors');
@@ -66,11 +76,12 @@
                     console.log('Computer takes this round! Scissors cuts paper.');
                     computerScore++;
                 }
+                //checks to see if a winner has been declared yet
                 if (computerScore == 5 || humanScore == 5) {
                     if (computerScore > humanScore) {
-                        console.log('Computer Wins!');
+                        console.log('Computer Wins! Final Score Is ' + computerScore + ' to ' + humanScore);
                     } else if (humanScore > computerScore) {
-                        console.log('Human Wins!');
+                        console.log('Human Wins! Final Score Is ' + computerScore + ' to ' + humanScore);
                     }
                 }
             }
