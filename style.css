@@ -1,6 +1,9 @@
 #top-bar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". titles ."
+                        " . subTitles ."
 }
 
 #controls {
@@ -9,6 +12,8 @@
     grid-template-rows: 1fr 1fr;
     grid-template-areas: ". button1 button2 button3 ."
                             ". . reset . .";
+    grid-gap: 20px;
+    justify-items: center;
 }
 
 #scoreBoard {
@@ -21,26 +26,91 @@
 
 #rock {
     grid-area: button1;
+    height: 100px;
+    border-radius: 100px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    min-width: 100%;
+    transition: 0.3s;
+}
+
+#rock:hover {
+    background-color: black;
+    color: white;
 }
 
 #paper {
     grid-area: button2;
+    height: 100px;
+    border-radius: 100px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    min-width: 100%;
+    transition: 0.2s;
+}
+
+#paper:hover {
+    background-color: black;
+    color: white;
 }
 
 #scissors {
     grid-area: button3;
+    height: 100px;
+    border-radius: 100px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    min-width: 100%;
+    transition: 0.2s;
+}
+
+#scissors:hover {
+    background-color: black;
+    color: white;
 }
 
 #reset {
     grid-area: reset;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+    max-width: 50%;
+    outline: none;
 }
 
-#scoreBoard > h1 {
-    grid-area: score;
+#reset:hover {
+    background: white;
+    color: black;
+}
+
+#main-title {
+    font-family: Arial, Helvetica, sans-serif;
+    grid-area: titles;
+    text-align: center;
+}
+
+#sub-title {
+    font-family: Arial, Helvetica, sans-serif;
+    grid-area: subTitles;
     text-align: center;
 }
 
 #scoreBoard > h2 {
+    grid-area: score;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+#scoreBoard > h3 {
     grid-area: results;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
