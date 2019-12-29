@@ -42,7 +42,7 @@
     color: white;
 }
 
-#rockDisabled {
+#rock.rockDisabled {
     grid-area: button1;
     height: 100px;
     border-radius: 100px;
@@ -53,7 +53,7 @@
     transition: 0.3s;
 }
 
-#rockDisabled:hover {
+#rock.rockDisabled:hover {
     background-color: lightgray;
     opacity: 50%;
 }
@@ -75,7 +75,7 @@
     color: white;
 }
 
-#paperDisabled {
+#paper.paperDisabled {
     grid-area: button2;
     height: 100px;
     border-radius: 100px;
@@ -86,7 +86,7 @@
     transition: 0.3s;
 }
 
-#paperDisabled:hover {
+#paper.paperDisabled:hover {
     background-color: lightgray;
     opacity: 50%;
 }
@@ -108,7 +108,7 @@
     color: white;
 }
 
-#scissorsDisabled {
+#scissors.scissorsDisabled {
     grid-area: button3;
     height: 100px;
     border-radius: 100px;
@@ -119,7 +119,7 @@
     transition: 0.3s;
 }
 
-#scissorsDisabled:hover {
+#scissors.scissorsDisabled:hover {
     background-color: lightgray;
     opacity: 50%;
 }

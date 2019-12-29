@@ -45,6 +45,13 @@
                 computerScore = 0;
                 scoreText.textContent = "Player Score:" + " " + humanScore + " " + "Computer Score:" + " " + computerScore;
                 roundResultText.textContent = " ";
+                document.getElementById('rock').disabled = false;
+                document.getElementById('rock').removeAttribute('class', 'rockDisabled');
+                document.getElementById('paper').disabled = false;
+                document.getElementById('paper').removeAttribute('class', 'paperDisabled');
+                document.getElementById('scissors').disabled = false;
+                document.getElementById('scissors').removeAttribute('class', 'scissorsDisabled');
+                document.getElementById('reset').style.boxShadow = "";
             }
             function initiatePresets() {
                 let rockButton = document.querySelector('#rock');
@@ -91,21 +98,21 @@
                     if (computerScore > humanScore) {
                         scoreText.textContent = 'Computer Wins! Final Score Is ' + computerScore + ' to ' + humanScore;
                         document.getElementById('rock').disabled = true;
-                        document.getElementById('rock').setAttribute('id', 'rockDisabled');
+                        document.getElementById('rock').setAttribute('class', 'rockDisabled');
                         document.getElementById('paper').disabled = true;
-                        document.getElementById('paper').setAttribute('id', 'paperDisabled');
+                        document.getElementById('paper').setAttribute('class', 'paperDisabled');
                         document.getElementById('scissors').disabled = true;
-                        document.getElementById('scissors').setAttribute('id', 'scissorsDisabled');
-                        document.getElementById('reset').style.boxShadow = "0px 0px 20px 20px lightgrey";
+                        document.getElementById('scissors').setAttribute('class', 'scissorsDisabled');
+                        document.getElementById('reset').style.boxShadow = "0px 0px 20px 20px lightblue";
                     } else if (humanScore > computerScore) {
                         scoreText.textContent = 'Human Wins! Final Score Is ' + humanScore + ' to ' + computerScore;
                         document.getElementById('rock').disabled = true;
-                        document.getElementById('rock').setAttribute('id', 'rockDisabled');
+                        document.getElementById('rock').setAttribute('class', 'rockDisabled');
                         document.getElementById('paper').disabled = true;
-                        document.getElementById('paper').setAttribute('id', 'paperDisabled');
+                        document.getElementById('paper').setAttribute('class', 'paperDisabled');
                         document.getElementById('scissors').disabled = true;
-                        document.getElementById('scissors').setAttribute('id', 'scissorsDisabled');
-                        document.getElementById('reset').style.boxShadow = "0px 0px 20px 20px lightgrey";
+                        document.getElementById('scissors').setAttribute('class', 'scissorsDisabled');
+                        document.getElementById('reset').style.boxShadow = "0px 0px 20px 20px lightblue";
                     } 
                 } else {
                         scoreboardUpdate();
