@@ -1,7 +1,7 @@
 #top-bar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
     grid-template-areas: ". titles ."
                         " . subTitles ."
 }
@@ -147,6 +147,7 @@
     font-family: Arial, Helvetica, sans-serif;
     grid-area: titles;
     text-align: center;
+    font-size: 60px;
 }
 
 #sub-title {
