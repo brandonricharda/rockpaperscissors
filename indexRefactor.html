@@ -2,8 +2,10 @@
 <html>
     <head>
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
     </head>
     <body>
+        <div id='top-bar'></div>
         <div id='controls'>
             <button id='rock'>Rock</button>
             <button id='paper'>Paper</button>
@@ -42,6 +44,7 @@
                 humanScore = 0;
                 computerScore = 0;
                 scoreText.textContent = "Player Score:" + " " + humanScore + " " + "Computer Score:" + " " + computerScore;
+                roundResultText.textContent = " ";
             }
             function initiateButtons() {
                 let rockButton = document.querySelector('#rock');

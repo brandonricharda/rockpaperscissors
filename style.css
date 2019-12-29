@@ -1,0 +1,46 @@
+#top-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#controls {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". button1 button2 button3 ."
+                            ". . reset . .";
+}
+
+#scoreBoard {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: ". score ."
+                        ". results .";
+}
+
+#rock {
+    grid-area: button1;
+}
+
+#paper {
+    grid-area: button2;
+}
+
+#scissors {
+    grid-area: button3;
+}
+
+#reset {
+    grid-area: reset;
+}
+
+#scoreBoard > h1 {
+    grid-area: score;
+    text-align: center;
+}
+
+#scoreBoard > h2 {
+    grid-area: results;
+    text-align: center;
+}
