@@ -90,8 +90,22 @@
                 if (computerScore == 5 || humanScore == 5) {
                     if (computerScore > humanScore) {
                         scoreText.textContent = 'Computer Wins! Final Score Is ' + computerScore + ' to ' + humanScore;
+                        document.getElementById('rock').disabled = true;
+                        document.getElementById('rock').setAttribute('id', 'rockDisabled');
+                        document.getElementById('paper').disabled = true;
+                        document.getElementById('paper').setAttribute('id', 'paperDisabled');
+                        document.getElementById('scissors').disabled = true;
+                        document.getElementById('scissors').setAttribute('id', 'scissorsDisabled');
+                        document.getElementById('reset').style.boxShadow = "0px 0px 20px 20px lightgrey";
                     } else if (humanScore > computerScore) {
                         scoreText.textContent = 'Human Wins! Final Score Is ' + humanScore + ' to ' + computerScore;
+                        document.getElementById('rock').disabled = true;
+                        document.getElementById('rock').setAttribute('id', 'rockDisabled');
+                        document.getElementById('paper').disabled = true;
+                        document.getElementById('paper').setAttribute('id', 'paperDisabled');
+                        document.getElementById('scissors').disabled = true;
+                        document.getElementById('scissors').setAttribute('id', 'scissorsDisabled');
+                        document.getElementById('reset').style.boxShadow = "0px 0px 20px 20px lightgrey";
                     } 
                 } else {
                         scoreboardUpdate();
