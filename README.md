@@ -1,3 +1,5 @@
 # rockpaperscissors
 
-The purpose of this project is to demonstrate my ability to create a functional Javascript application with a basic UI.
+This is my solution to the Rock-Paper-Scissors assignment from The Odin Project:
+
+https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors
